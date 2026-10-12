@@ -201,31 +201,55 @@
   .links { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
   .privacy { font-size: 0.92rem; color: var(--muted); }
 
+  .gallery { position: relative; min-width: 0; }
   .shots {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-columns: 58%;
     gap: 10px;
     padding-inline: 8px;
+    scroll-padding-inline: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    padding-bottom: 6px;
+    scrollbar-width: none;
   }
-  .shots img { width: 100%; aspect-ratio: 9 / 17.5; object-fit: cover; border-radius: 16px; background: var(--g); border: 3px solid #0E0C1C; }
+  .shots::-webkit-scrollbar { display: none; }
+  .shots:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 18px; }
+  .shots img { width: 100%; aspect-ratio: 9 / 17.5; object-fit: cover; border-radius: 16px; background: var(--g); border: 3px solid #0E0C1C; scroll-snap-align: start; }
 
-  @media (max-width: 719px) {
-    .shots {
-      grid-auto-columns: 58%;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      overscroll-behavior-x: contain;
-      padding-bottom: 6px;
-      scrollbar-width: none;
-    }
-    .shots::-webkit-scrollbar { display: none; }
-    .shots img { scroll-snap-align: start; }
+  .arrow {
+    position: absolute;
+    top: calc(50% - 3px);
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    background: rgba(14, 12, 28, 0.78);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+    transition: opacity 0.2s, background 0.2s;
   }
+  .arrow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .arrow:hover { background: rgba(14, 12, 28, 0.95); }
+  .arrow:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .arrow.prev { left: 2px; }
+  .arrow.next { right: 2px; }
+  .arrow:disabled { opacity: 0; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) { .shots { scroll-behavior: auto; } }
+
   @media (min-width: 720px) {
     .game { padding: 14px 14px 28px; }
     .info { padding-inline: 18px; }
-    .shots { padding-inline: 18px; }
+    .shots { padding-inline: 18px; scroll-padding-inline: 18px; grid-auto-columns: calc((100% - 20px) / 3); }
+    .arrow.prev { left: 6px; }
+    .arrow.next { right: 6px; }
   }
   @media (min-width: 1000px) {
     .game {
@@ -239,7 +263,10 @@
     .game:nth-child(even) { grid-template-areas: "shots banner" "shots info"; }
     .banner { grid-area: banner; }
     .info { grid-area: info; padding: 0 8px 12px; }
-    .shots { grid-area: shots; padding: 0; align-self: stretch; align-content: center; }
+    .gallery { grid-area: shots; align-self: center; }
+    .shots { padding-inline: 0; scroll-padding-inline: 0; }
+    .arrow.prev { left: -10px; }
+    .arrow.next { right: -10px; }
   }
 
   .soon { margin-top: 28px; color: var(--muted); font-size: 1rem; }
@@ -326,10 +353,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/candle-gift.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/candlewright/shot-1.webp" alt="Dipping a batch of candles into a pool of pink wax" width="540" height="960" loading="lazy">
-          <img src="games/candlewright/shot-2.webp" alt="A lit candle beside the rank meter, climbing toward Tycoon" width="540" height="960" loading="lazy">
-          <img src="games/candlewright/shot-3.webp" alt="A row of finished candles after a clean line, with a payout of 124 dollars" width="540" height="960" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Candlewright screenshots">
+            <img src="games/candlewright/shot-1.webp" alt="Dipping a batch of candles into a pool of pink wax" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-2.webp" alt="A lit candle beside the rank meter, climbing toward Tycoon" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-3.webp" alt="Steering a clean line of candles for a 124 dollar payout" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-4.webp" alt="Dodging hazards on the candle line" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-5.webp" alt="One of six candle factories to work" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-6.webp" alt="A level complete, with a new candle skin earned" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-7.webp" alt="The upgrades shop, buying more candles" width="540" height="960" loading="lazy">
+            <img src="games/candlewright/shot-8.webp" alt="The recipe book, half filled" width="540" height="960" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Candlewright screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Candlewright screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -345,10 +381,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/wildform.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/fangwall/shot-1.webp" alt="Smash the wall: a raptor in front of numbered stone blocks" width="540" height="1080" loading="lazy">
-          <img src="games/fangwall/shot-2.webp" alt="Unleash a firestorm down a lava road" width="540" height="1080" loading="lazy">
-          <img src="games/fangwall/shot-3.webp" alt="Shooting a glowing gate to evolve" width="540" height="1080" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Fangwall screenshots">
+            <img src="games/fangwall/shot-1.webp" alt="A dinosaur smashing through a wall of numbers" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-2.webp" alt="Unleashing a firestorm down a red canyon" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-3.webp" alt="Shooting gates to evolve the dinosaur" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-4.webp" alt="Standing up to the alpha" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-5.webp" alt="Mixing types into a crossbreed" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-6.webp" alt="Fighting wild monsters" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-7.webp" alt="Running through lava fields" width="540" height="1080" loading="lazy">
+            <img src="games/fangwall/shot-8.webp" alt="Sweeping a row of numbers for gems" width="540" height="1080" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Fangwall screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Fangwall screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -364,10 +409,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/stillwater.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/nethermere/shot-1.webp" alt="Reeling in a trophy northern pike beside the rowboat" width="540" height="960" loading="lazy">
-          <img src="games/nethermere/shot-2.webp" alt="Something old lives deep: a huge dark fish at the rail" width="540" height="960" loading="lazy">
-          <img src="games/nethermere/shot-3.webp" alt="A largemouth bass on the line at night, by lantern light" width="540" height="960" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Nethermere screenshots">
+            <img src="games/nethermere/shot-1.webp" alt="Reeling in a trophy pike" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-2.webp" alt="Something old that lives deep in the lake" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-3.webp" alt="Fishing by lantern light at night" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-4.webp" alt="Fishing a calm lake at dawn" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-5.webp" alt="Waiting for a bite from the boat" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-6.webp" alt="Striking as a fish bites" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-7.webp" alt="Choosing which fish to keep in the bucket" width="540" height="960" loading="lazy">
+            <img src="games/nethermere/shot-8.webp" alt="A drowned town's steeple beside the boat" width="540" height="960" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Nethermere screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Nethermere screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -383,10 +437,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/yardling.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/lawn-legend/shot-1.webp" alt="The gnome cutting long grass in rows" width="540" height="1080" loading="lazy">
-          <img src="games/lawn-legend/shot-2.webp" alt="Whacking a boss weed with a long-handled tool" width="540" height="1080" loading="lazy">
-          <img src="games/lawn-legend/shot-3.webp" alt="The gnome with a robot mower following behind" width="540" height="1080" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Lawn Legend screenshots">
+            <img src="games/lawn-legend/shot-1.webp" alt="A garden gnome cutting tall grass" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-2.webp" alt="Beating a boss weed" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-3.webp" alt="A robot mower helping out" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-4.webp" alt="Mowing, whacking and growing the yard" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-5.webp" alt="Mowing until sunset" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-6.webp" alt="Pushing a real mower" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-7.webp" alt="Gold rush days on a sandy lawn" width="540" height="1080" loading="lazy">
+            <img src="games/lawn-legend/shot-8.webp" alt="Unlocking wilder tools" width="540" height="1080" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Lawn Legend screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Lawn Legend screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -402,10 +465,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/wrecking-crew.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/load-bearing/shot-1.webp" alt="The wrecking ball swinging into a brick wall" width="540" height="960" loading="lazy">
-          <img src="games/load-bearing/shot-2.webp" alt="A brick building with its middle taken out, about to drop" width="540" height="960" loading="lazy">
-          <img src="games/load-bearing/shot-3.webp" alt="Lining up the ball on a column of a tall brick building" width="540" height="960" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Load Bearing screenshots">
+            <img src="games/load-bearing/shot-1.webp" alt="Swinging the wrecking ball into a brick house" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-2.webp" alt="Bringing the house down" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-3.webp" alt="Picking a target" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-4.webp" alt="Cutting the columns" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-5.webp" alt="Floors dropping straight down" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-6.webp" alt="A job done with three stars" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-7.webp" alt="Upgrading the crane in the yard" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-8.webp" alt="Racing the rival crew" width="540" height="960" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Load Bearing screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Load Bearing screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -422,10 +494,18 @@
           </div>
           <p class="aka">Making Gelbound: follow how it is built on the devlog, on <a href="https://www.youtube.com/@MakingGelboundDev">YouTube</a> and <a href="https://www.tiktok.com/@makinggelbounddev">TikTok</a>.</p>
         </div>
-        <div class="shots">
-          <img src="games/gelbound/shot-1.webp" alt="The slime on a jungle path, running toward a TNT crate" width="540" height="1080" loading="lazy">
-          <img src="games/gelbound/shot-2.webp" alt="The slime sliding across ice in Frost Falls" width="540" height="1080" loading="lazy">
-          <img src="games/gelbound/shot-3.webp" alt="The Wellspring pool, ringed by the four world drops" width="540" height="1080" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Gelbound screenshots">
+            <img src="games/gelbound/shot-1.webp" alt="Running before a TNT crate blows" width="540" height="1080" loading="lazy">
+            <img src="games/gelbound/shot-2.webp" alt="Sliding through Frost Falls" width="540" height="1080" loading="lazy">
+            <img src="games/gelbound/shot-3.webp" alt="Smashing every crate" width="540" height="1080" loading="lazy">
+            <img src="games/gelbound/shot-4.webp" alt="Bouncing across a chasm" width="540" height="1080" loading="lazy">
+            <img src="games/gelbound/shot-5.webp" alt="Dodging beetles and grabbing gel" width="540" height="1080" loading="lazy">
+            <img src="games/gelbound/shot-6.webp" alt="Smashing through the factory" width="540" height="1080" loading="lazy">
+            <img src="games/gelbound/shot-7.webp" alt="Riding the autumn wind" width="540" height="1080" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Gelbound screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Gelbound screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -441,10 +521,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/snowball.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/duskroll/shot-1.webp" alt="A growing snowball rolling past pines" width="540" height="960" loading="lazy">
-          <img src="games/duskroll/shot-2.webp" alt="The snowball reaching the village at the bottom" width="540" height="960" loading="lazy">
-          <img src="games/duskroll/shot-3.webp" alt="Running straight to outrun an avalanche" width="540" height="960" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Duskroll screenshots">
+            <img src="games/duskroll/shot-1.webp" alt="Growing a giant snowball down the slope" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-2.webp" alt="Rolling the snowball into a village" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-3.webp" alt="Outrunning an avalanche" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-4.webp" alt="Riding the Night Face" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-5.webp" alt="Rolling as a hedgehog" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-6.webp" alt="Everything sticks to the snowball" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-7.webp" alt="Chasing the white hare" width="540" height="960" loading="lazy">
+            <img src="games/duskroll/shot-8.webp" alt="Beating the gold time" width="540" height="960" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Duskroll screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Duskroll screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -460,10 +549,19 @@
             <a class="privacy" href="https://gideon6222.github.io/privacy/gravewell.html">Privacy</a>
           </div>
         </div>
-        <div class="shots">
-          <img src="games/mournwell/shot-1.webp" alt="The drill in a dark shaft with a glow below" width="540" height="960" loading="lazy">
-          <img src="games/mournwell/shot-2.webp" alt="The drill cutting out a glowing core" width="540" height="960" loading="lazy">
-          <img src="games/mournwell/shot-3.webp" alt="The drill ship lighting ore in the walls of its tunnel" width="540" height="960" loading="lazy">
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Mournwell screenshots">
+            <img src="games/mournwell/shot-1.webp" alt="Outrunning the collapse" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-2.webp" alt="Cutting out the core" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-3.webp" alt="Mining ore by lamplight" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-4.webp" alt="Drilling deep down the shaft" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-5.webp" alt="Digging on while something listens" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-6.webp" alt="The contract board between dives" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-7.webp" alt="Choosing to bank the haul or dig deeper" width="540" height="960" loading="lazy">
+            <img src="games/mournwell/shot-8.webp" alt="Reading the logs the dead left behind" width="540" height="960" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Mournwell screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Mournwell screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </article>
 
@@ -503,5 +601,29 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.gallery').forEach(function (g) {
+    var track = g.querySelector('.shots');
+    var prev = g.querySelector('.prev');
+    var next = g.querySelector('.next');
+    function step() {
+      var img = track.querySelector('img');
+      return img ? img.getBoundingClientRect().width + 10 : track.clientWidth;
+    }
+    function update() {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    }
+    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>
 </body>
 </html>
