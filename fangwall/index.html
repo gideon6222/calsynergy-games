@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fangwall: Dino Evolution Run for Android | Calsynergy Games</title>
+<meta name="description" content="Dino evolution runner: shoot gates, evolve into a T-rex and smash the wall. Free on Google Play, from Calsynergy Games.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2F0FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15132A" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://calsynergygames.com/fangwall/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calsynergy Games">
+<meta property="og:title" content="Fangwall: Dino Evolution Run">
+<meta property="og:description" content="Dino evolution runner: shoot gates, evolve into a T-rex and smash the wall.">
+<meta property="og:url" content="https://calsynergygames.com/fangwall/">
+<meta property="og:image" content="https://calsynergygames.com/games/fangwall/feature.webp">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Unbounded:wght@500;700;800&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Fangwall",
+  "operatingSystem": "Android",
+  "applicationCategory": "GameApplication",
+  "description": "Dino evolution runner: shoot gates, evolve into a T-rex and smash the wall.",
+  "url": "https://calsynergygames.com/fangwall/",
+  "image": "https://calsynergygames.com/games/fangwall/feature.webp",
+  "screenshot": [
+    "https://calsynergygames.com/games/fangwall/shot-1.webp",
+    "https://calsynergygames.com/games/fangwall/shot-2.webp",
+    "https://calsynergygames.com/games/fangwall/shot-3.webp"
+  ],
+  "installUrl": "https://play.google.com/store/apps/details?id=com.gideon.wildform",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Calsynergy Games",
+    "url": "https://calsynergygames.com/"
+  }
+}
+</script>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F2F0FA;
+    --surface: #FFFFFF;
+    --ink: #1D1A33;
+    --muted: #5E5A7A;
+    --line: #DCD8EC;
+    --cta: #FFC23D;
+    --cta-ink: #1D1A33;
+    --chip: #1D1A33;
+    --chip-ink: #FFFFFF;
+    --focus: #6D4CFF;
+    --tint: 13%;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15132A;
+      --surface: #1F1C38;
+      --ink: #F1EFFA;
+      --muted: #ABA6CA;
+      --line: #35315A;
+      --chip: #F1EFFA;
+      --chip-ink: #15132A;
+      --focus: #B9A8FF;
+      --tint: 16%;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15132A;
+    --surface: #1F1C38;
+    --ink: #F1EFFA;
+    --muted: #ABA6CA;
+    --line: #35315A;
+    --chip: #F1EFFA;
+    --chip-ink: #15132A;
+    --focus: #B9A8FF;
+    --tint: 16%;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 Figtree, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { font-family: Unbounded, system-ui, sans-serif; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+
+  .wrap { width: 100%; max-width: 1160px; margin-inline: auto; padding-inline: 16px; }
+  @media (min-width: 720px) { .wrap { padding-inline: 32px; } }
+
+  /* ---------- top bar ---------- */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+  .brand img { width: 30px; height: 30px; }
+  .top nav { display: flex; gap: 18px; font-weight: 600; font-size: 0.98rem; }
+  .top nav a { text-decoration: none; color: var(--muted); }
+  .top nav a:hover { color: var(--ink); }
+  @media (max-width: 420px) { .top nav a.opt { display: none; } }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; gap: 40px; align-items: center; padding-block: 24px 64px; }
+  @media (min-width: 900px) { .hero { grid-template-columns: 1.15fr 0.85fr; padding-block: 48px 96px; } }
+  .hero h1 {
+    font-size: clamp(2.3rem, 10.5vw, 5.4rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 span { display: block; }
+  .hero h1 .light { font-weight: 500; color: var(--muted); }
+  .hero .lead { margin-top: 22px; max-width: 34rem; font-size: 1.2rem; line-height: 1.55; }
+  .hero .actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    min-height: 48px; padding: 0 22px;
+    border-radius: 999px;
+    font: 700 1rem/1 Figtree, sans-serif;
+    text-decoration: none;
+    border: 2px solid transparent;
+  }
+  .btn-cta { background: var(--cta); color: var(--cta-ink); }
+  .btn-cta:hover { filter: brightness(1.06); }
+  .btn-quiet { border-color: var(--line); color: var(--ink); }
+  .btn-quiet:hover { border-color: var(--ink); }
+  .btn-play { background: var(--chip); color: var(--chip-ink); }
+  .btn-play:hover { opacity: 0.88; }
+  .btn-play svg { width: 16px; height: 16px; flex: none; }
+  .links .btn-quiet svg { width: 18px; height: 18px; flex: none; }
+
+  /* the phone */
+  .phone {
+    justify-self: center;
+    width: min(300px, 100%);
+    aspect-ratio: 9 / 16;
+    border-radius: 46px;
+    padding: 10px;
+    background: #0E0C1C;
+    box-shadow: 0 30px 60px -30px rgba(29, 26, 51, 0.55), inset 0 0 0 2px #2C2848;
+  }
+  .screen {
+    position: relative;
+    height: 100%;
+    border-radius: 37px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    padding: 14px 18px 18px;
+    color: #fff;
+    background:
+      radial-gradient(120% 60% at 80% 105%, #FF9F5A 0%, rgba(255, 159, 90, 0) 60%),
+      radial-gradient(90% 50% at 10% 0%, #6D4CFF 0%, rgba(109, 76, 255, 0) 70%),
+      linear-gradient(180deg, #2A2160 0%, #5A3A8C 55%, #D9708A 100%);
+  }
+  .status { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 600; opacity: 0.9; padding-inline: 8px; }
+  .status .cam { width: 12px; height: 12px; border-radius: 50%; background: #0E0C1C; }
+  .clock { margin-top: 26px; text-align: center; font-family: Unbounded, sans-serif; font-weight: 500; font-size: 2.6rem; line-height: 1; letter-spacing: -0.02em; }
+  .date { text-align: center; font-size: 0.85rem; opacity: 0.85; margin-top: 6px; }
+  @media (min-width: 900px) { .phone { width: 340px; } }
+  .apps {
+    margin-top: auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px 10px;
+  }
+  .app { display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; color: #fff; font-size: 0.7rem; font-weight: 600; text-align: center; line-height: 1.15; }
+  .app img { width: 100%; max-width: 58px; aspect-ratio: 1; border-radius: 30%; box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.6); }
+  .app:hover img { transform: translateY(-2px); }
+  .app span { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+  .dock { margin-top: 18px; height: 6px; width: 38%; align-self: center; border-radius: 3px; background: rgba(255, 255, 255, 0.75); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .app img { transition: transform 0.15s ease; }
+    .app { animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; animation-delay: calc(0.25s + var(--i) * 0.07s); }
+    @keyframes pop { from { opacity: 0; transform: scale(0.4) translateY(14px); } to { opacity: 1; transform: none; } }
+  }
+
+  /* ---------- section heads ---------- */
+  .head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 28px; }
+  .head h2 { font-size: clamp(1.7rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: -0.015em; }
+  .head p { color: var(--muted); max-width: 32rem; }
+
+  /* ---------- games ---------- */
+  .games { padding-block: 24px 40px; }
+  .game-list { display: grid; gap: 28px; }
+  .game {
+    --t: color-mix(in srgb, var(--g) var(--tint), var(--surface));
+    scroll-margin-top: 16px;
+    background: var(--t);
+    border: 1px solid color-mix(in srgb, var(--g) 28%, var(--line));
+    border-radius: 32px;
+    padding: 12px 12px 24px;
+    display: grid;
+    gap: 22px;
+    min-width: 0;
+  }
+  .game > * { min-width: 0; }
+  .banner { border-radius: 22px; overflow: hidden; aspect-ratio: 1024 / 500; background: var(--g); }
+  .banner img { width: 100%; height: 100%; object-fit: cover; }
+  .info { padding-inline: 8px; }
+  .title { display: flex; align-items: center; gap: 14px; }
+  .title img { width: 64px; height: 64px; border-radius: 30%; flex: none; box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.5); }
+  .title h3 { font-size: clamp(1.45rem, 5.4vw, 2rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+  .title .sub { display: block; margin-top: 6px; font-family: Figtree, sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+  .short { margin-top: 18px; font-size: 1.22rem; font-weight: 600; line-height: 1.4; max-width: 36rem; }
+  .body { margin-top: 12px; color: var(--muted); max-width: 38rem; }
+  .aka { margin-top: 10px; font-size: 0.92rem; color: var(--muted); }
+  .links { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+  .privacy { font-size: 0.92rem; color: var(--muted); }
+  .more { font-size: 0.98rem; font-weight: 600; color: var(--ink); }
+
+  .gallery { position: relative; min-width: 0; }
+  .shots {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 58%;
+    gap: 10px;
+    padding-inline: 8px;
+    scroll-padding-inline: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+  .shots::-webkit-scrollbar { display: none; }
+  .shots:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 18px; }
+  .shots img { width: 100%; aspect-ratio: 9 / 17.5; object-fit: cover; border-radius: 16px; background: var(--g); border: 3px solid #0E0C1C; scroll-snap-align: start; }
+
+  .arrow {
+    position: absolute;
+    top: calc(50% - 3px);
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    background: rgba(14, 12, 28, 0.78);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .arrow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .arrow:hover { background: rgba(14, 12, 28, 0.95); }
+  .arrow:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .arrow.prev { left: 2px; }
+  .arrow.next { right: 2px; }
+  .arrow:disabled { opacity: 0; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) { .shots { scroll-behavior: auto; } }
+
+  @media (min-width: 720px) {
+    .game { padding: 14px 14px 28px; }
+    .info { padding-inline: 18px; }
+    .shots { padding-inline: 18px; scroll-padding-inline: 18px; grid-auto-columns: calc((100% - 20px) / 3); }
+    .arrow.prev { left: 6px; }
+    .arrow.next { right: 6px; }
+  }
+  @media (min-width: 1000px) {
+    .game {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "banner shots" "info shots";
+      align-items: start;
+      padding: 16px;
+      column-gap: 28px;
+      row-gap: 26px;
+    }
+    .game:nth-child(even) { grid-template-areas: "shots banner" "shots info"; }
+    .banner { grid-area: banner; }
+    .info { grid-area: info; padding: 0 8px 12px; }
+    .gallery { grid-area: shots; align-self: center; }
+    .shots { padding-inline: 0; scroll-padding-inline: 0; }
+    .arrow.prev { left: -10px; }
+    .arrow.next { right: -10px; }
+  }
+
+  .soon { margin-top: 28px; color: var(--muted); font-size: 1rem; }
+  .soon strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- about and contact ---------- */
+  .duo { display: grid; gap: 24px; padding-block: 48px 64px; }
+  @media (min-width: 900px) { .duo { grid-template-columns: 1.3fr 1fr; gap: 32px; } }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 32px; padding: 28px 22px; }
+  @media (min-width: 720px) { .panel { padding: 40px; } }
+  .panel h2 { font-size: clamp(1.5rem, 4.4vw, 2rem); font-weight: 800; letter-spacing: -0.015em; }
+  .panel p { margin-top: 14px; max-width: 38rem; }
+  .panel p.muted { color: var(--muted); }
+  .facts { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .facts li { display: flex; gap: 12px; align-items: baseline; }
+  .facts li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--cta); transform: translateY(-1px); }
+  .email { display: inline-block; margin-top: 18px; font-weight: 700; font-size: clamp(1.15rem, 5vw, 1.45rem); overflow-wrap: anywhere; text-decoration-color: var(--cta); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+  .social { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .social svg { width: 18px; height: 18px; flex: none; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 0.92rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+  .title h1.gname { font-size: clamp(1.6rem, 6vw, 2.3rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+  .crumb { padding-top: 8px; font-size: 0.95rem; }
+  .crumb a { color: var(--muted); }
+  .solo .game-list { display: block; }
+  .about-game { padding-block: 8px 56px; max-width: 46rem; }
+  .about-game h2 { font-family: Unbounded, sans-serif; font-size: clamp(1.3rem, 4.6vw, 1.7rem); margin: 8px 0 14px; }
+  .about-game h3 { font-family: Unbounded, sans-serif; font-size: 1.02rem; letter-spacing: 0.02em; margin: 26px 0 8px; }
+  .about-game p { margin: 0 0 12px; color: var(--ink); }
+  .about-game ul { margin: 0 0 12px; padding-left: 1.2em; color: var(--ink); }
+  .about-game li { margin: 4px 0; }
+  .others { padding-bottom: 64px; }
+  .others h2 { font-family: Unbounded, sans-serif; font-size: 1.2rem; margin-bottom: 14px; }
+  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .others a { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; }
+  .others img { width: 40px; height: 40px; border-radius: 30%; flex: none; }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="brand" href="../" aria-label="Calsynergy Games, home"><img src="../favicon.svg" alt="" width="30" height="30">Calsynergy Games</a>
+  <nav aria-label="Sections">
+    <a href="../#games">Games</a>
+    <a href="../#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top" class="solo">
+  <div class="wrap crumb"><a href="../#games">All games</a> / Fangwall</div>
+  <section class="wrap games" aria-label="Fangwall">
+    <div class="game-list">
+      <article class="game solo-game" id="fangwall" style="--g:#F28C28">
+        <div class="banner"><img src="../games/fangwall/feature.webp" alt="Fangwall: a low-poly T-rex beside the game's title" width="1024" height="500" loading="lazy"></div>
+        <div class="info">
+          <div class="title"><img src="../games/fangwall/icon.webp" alt="" width="64" height="64" loading="lazy"><h1 class="gname">Fangwall<span class="sub">Dino Evolution Run</span></h1></div>
+          <p class="short">Dino evolution runner: shoot gates, evolve into a T-rex and smash the wall.</p>
+          <p class="body">Drag your thumb and your little raptor runs, and wherever you steer, you shoot. Gates stand across the road in four types, and the type you shoot most is what you evolve into at the next arch, out of sixteen forms. Every world ends at a wall of numbered stone blocks you have to smash your way through.</p>
+          <div class="links">
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.wildform&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dgamepage%26utm_campaign%3Dfangwall"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
+            <a class="btn btn-quiet" href="https://www.youtube.com/watch?v=GCb90WE-txE"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2 14.5v-9l7 4.5-7 4.5Z"/></svg>Watch</a>
+            <a class="privacy" href="https://gideon6222.github.io/privacy/wildform.html">Privacy</a>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="shots" tabindex="0" role="region" aria-label="Fangwall screenshots">
+            <img src="../games/fangwall/shot-1.webp" alt="A dinosaur smashing through a wall of numbers" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-2.webp" alt="Unleashing a firestorm down a red canyon" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-3.webp" alt="Shooting gates to evolve the dinosaur" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-4.webp" alt="Standing up to the alpha" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-5.webp" alt="Mixing types into a crossbreed" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-6.webp" alt="Fighting wild monsters" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-7.webp" alt="Running through lava fields" width="540" height="1080" loading="lazy">
+            <img src="../games/fangwall/shot-8.webp" alt="Sweeping a row of numbers for gems" width="540" height="1080" loading="lazy">
+          </div>
+          <button class="arrow prev" type="button" aria-label="Previous Fangwall screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow next" type="button" aria-label="Next Fangwall screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap about-game" aria-labelledby="about-game-title">
+      <h2 id="about-game-title">About Fangwall</h2>
+      <p>Drag your thumb and your little raptor runs. Your thumb aims too, so wherever you steer, you shoot. In the first minute you blast gates on the road, watch them power up as you hit them, run through an arch and evolve into something bigger. Then a wall of numbered stone blocks stands across the road, and you smash your way through it.</p>
+      <p>Fangwall is a dino evolution runner and a lane shooter in one: steer, shoot, evolve, and break the wall at the end of every world.</p>
+      <h3>What you feed is what you become</h3>
+      <p>Gates stand in pairs across the road: Grass, Fire, Water and Storm. Shooting one powers it up, and every shot is a vote. The type you feed the most is the type you evolve into at the next arch. Your raptor can grow into a crested runner, a plated giant or a long-necked titan, and feed Water all the way to end the line as a T-rex. Dragons, slimes and storm spirits wait down the other lines.</p>
+      <ul>
+        <li>Four types, four stages, sixteen forms</li>
+        <li>Switch types at an arch and you become a crossbreed, two types in one body</li>
+        <li>Tap the ring to molt back to the form you were before</li>
+      </ul>
+      <h3>Your body is your health</h3>
+      <p>There is no health bar. Your evolution stage is your life. Every hit knocks you down a stage, and at your smallest one more hit ends the run. Grow big and you can take a beating. Stay small and every dodge counts.</p>
+      <h3>Smash the wall</h3>
+      <p>Every world ends at a wall of numbered stone blocks. Break one block a row to push through, or sweep the whole row for more coins and gems if you are strong and fast enough. Touch a block you have not broken and the run is over, so pick your lane. The last row is the warden itself. Every run ends on what you earned, and every run makes the next one stronger.</p>
+      <h3>Monsters and alphas</h3>
+      <p>Spiky blobs swarm you, toothed fish charge, and a stone giant takes a lot of shooting to bring down. A horned alpha locks onto your lane and holds there. Shoot it down in the standoff or get out of its way before it charges.</p>
+      <h3>Every world plays differently</h3>
+      <p>Run through forests, lava fields, coasts and storm moors. Roots rise across the road, lava cracks erupt, swells roll in with a gap to steer for, and lightning strikes a lane. Each hazard warns you first, and there is always a way through. From world five the warden at the wall carries two types at once.</p>
+      <h3>Grow your attack</h3>
+      <ul>
+        <li>Your shots split and spread as you evolve</li>
+        <li>Level up mid-run and pick one power card of three</li>
+        <li>Fill the Surge meter to unleash your line&#x27;s special: a thorn wall, a firestorm, a tidal wave or a chain storm</li>
+        <li>Earn gifts as you go deeper: a sidekick that guards you, a lance that strikes the block behind, a steel plate that rams one block for you</li>
+      </ul>
+      <h3>Keep what you become</h3>
+      <p>The world resets every run, your creature does not. Spend coins on upgrades for the road, spend gems from the wall on a permanent tree of powers, and climb your Bloodline for damage you keep forever. Every form you reach goes into your Creatures collection, and every line can be mastered.</p>
+      <h3>Made for one thumb</h3>
+      <p>One drag does everything: steer and aim at once, with no fire button. Short runs that fit a bus stop, and a reason to go one more time.</p>
+      <p>If you like dinosaur games, evolution runners, monster evolution, gate shooters or arcade runners where every choice changes what you grow into, Fangwall was made for you.</p>
+      <p>Free to play. An ad can show between runs, and one purchase, Remove ads, takes those away for good.</p>
+  </section>
+
+  <section class="wrap others" aria-labelledby="others-title">
+      <h2 id="others-title">More free games</h2>
+      <ul>
+        <li><a href="../candlewright/"><img src="../games/candlewright/icon.webp" alt="" width="40" height="40" loading="lazy">Candlewright</a></li>
+        <li><a href="../nethermere/"><img src="../games/nethermere/icon.webp" alt="" width="40" height="40" loading="lazy">Nethermere</a></li>
+        <li><a href="../lawn-legend/"><img src="../games/lawn-legend/icon.webp" alt="" width="40" height="40" loading="lazy">Lawn Legend</a></li>
+        <li><a href="../load-bearing/"><img src="../games/load-bearing/icon.webp" alt="" width="40" height="40" loading="lazy">Load Bearing</a></li>
+        <li><a href="../gelbound/"><img src="../games/gelbound/icon.webp" alt="" width="40" height="40" loading="lazy">Gelbound</a></li>
+        <li><a href="../duskroll/"><img src="../games/duskroll/icon.webp" alt="" width="40" height="40" loading="lazy">Duskroll</a></li>
+        <li><a href="../mournwell/"><img src="../games/mournwell/icon.webp" alt="" width="40" height="40" loading="lazy">Mournwell</a></li>
+      </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Calsynergy Games, Salem, Oregon</span>
+    <a href="https://gideon6222.github.io/privacy/">Privacy policies</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.gallery').forEach(function (g) {
+    var track = g.querySelector('.shots');
+    var prev = g.querySelector('.prev');
+    var next = g.querySelector('.next');
+    function step() {
+      var img = track.querySelector('img');
+      return img ? img.getBoundingClientRect().width + 10 : track.clientWidth;
+    }
+    function update() {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    }
+    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>
+</body>
+</html>
