@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Calsynergy Games</title>
-<meta name="description" content="Calsynergy Games is a one-person studio making small, free games for Android phones: Candlewright, Fangwall, Nethermere, Lawn Legend, Load Bearing, Gelbound, Duskroll and Mournwell, all on Google Play. Beacon Hill is coming soon.">
+<meta name="description" content="Calsynergy Games is a one-person studio making small, free games for Android phones: Candlewright, Fangwall, Nethermere, Lawn Legend, Load Bearing, Gelbound, Duskroll, Mournwell and The Lattice, all on Google Play. Beacon Hill, Ebblight and Capy Knight are coming soon.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F2F0FA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#15132A" media="(prefers-color-scheme: dark)">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Calsynergy Games">
 <meta property="og:title" content="Calsynergy Games">
-<meta property="og:description" content="Small, free games for your phone, made by one person. Eight of them are on Google Play.">
+<meta property="og:description" content="Small, free games for your phone, made by one person. Nine of them are on Google Play.">
 <meta property="og:url" content="https://calsynergygames.com/">
 <meta property="og:image" content="https://calsynergygames.com/og.jpg">
 <meta property="og:image:width" content="1024">
@@ -163,13 +163,14 @@
   @media (min-width: 900px) { .phone { width: 340px; } }
   .apps {
     margin-top: auto;
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px 10px;
   }
   .app { display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; color: #fff; font-size: 0.7rem; font-weight: 600; text-align: center; line-height: 1.15; }
   .app img { width: 100%; max-width: 58px; aspect-ratio: 1; border-radius: 30%; box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.6); }
   .app:hover img { transform: translateY(-2px); }
   .app span { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+  @media (max-width: 420px) { .apps { gap: 14px 6px; } .app { font-size: 0.62rem; } }
   .dock { margin-top: 18px; height: 6px; width: 38%; align-self: center; border-radius: 3px; background: rgba(255, 255, 255, 0.75); }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -295,8 +296,6 @@
   .facts li { display: flex; gap: 12px; align-items: baseline; }
   .facts li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--cta); transform: translateY(-1px); }
   .email { display: inline-block; margin-top: 18px; font-weight: 700; font-size: clamp(1.15rem, 5vw, 1.45rem); overflow-wrap: anywhere; text-decoration-color: var(--cta); text-decoration-thickness: 3px; text-underline-offset: 6px; }
-  .social { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .social svg { width: 18px; height: 18px; flex: none; }
 
   footer { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 0.92rem; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
@@ -317,14 +316,14 @@
   <section class="wrap hero">
     <div>
       <h1><span>Calsynergy</span><span class="light">Games</span></h1>
-      <p class="lead">Small games for your phone, made by one person. Every one is built and played on a real phone before it ships, and all eight are free on Google Play.</p>
+      <p class="lead">Small games for your phone, made by one person. Every one is built and played on a real phone before it ships, and all nine are free on Google Play.</p>
       <div class="actions">
         <a class="btn btn-cta" href="#games">See the games</a>
         <a class="btn btn-quiet" href="#contact">Get in touch</a>
       </div>
     </div>
 
-    <div class="phone" role="group" aria-label="The eight games, as icons on a phone home screen">
+    <div class="phone" role="group" aria-label="The nine games, as icons on a phone home screen">
       <div class="screen">
         <div class="status" aria-hidden="true"><span>9:41</span><span class="cam"></span><span>100%</span></div>
         <div class="clock" aria-hidden="true">9:41</div>
@@ -338,6 +337,7 @@
           <a class="app" style="--i:5" href="#gelbound"><img src="games/gelbound/icon.webp" alt="" width="58" height="58"><span>Gelbound</span></a>
           <a class="app" style="--i:6" href="#duskroll"><img src="games/duskroll/icon.webp" alt="" width="58" height="58"><span>Duskroll</span></a>
           <a class="app" style="--i:7" href="#mournwell"><img src="games/mournwell/icon.webp" alt="" width="58" height="58"><span>Mournwell</span></a>
+          <a class="app" style="--i:8" href="#lattice"><img src="games/lattice/icon.webp" alt="" width="58" height="58"><span>The Lattice</span></a>
         </div>
         <div class="dock" aria-hidden="true"></div>
       </div>
@@ -347,7 +347,7 @@
   <section class="wrap games" id="games" aria-labelledby="games-title">
     <div class="head">
       <h2 id="games-title">The games</h2>
-      <p>Eight games for Android, each played with one thumb. All free to play, and one small purchase turns the ads off for good.</p>
+      <p>Nine games for Android, each played with one thumb. All free to play. Where there are ads, one small purchase turns them off for good.</p>
     </div>
 
     <div class="game-list">
@@ -356,7 +356,7 @@
         <div class="banner"><img src="games/candlewright/feature.webp" alt="Candlewright: candles dipping through pools of colored wax on a factory belt" width="1024" height="500" loading="lazy"></div>
         <div class="info">
           <div class="title"><img src="games/candlewright/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Candlewright<span class="sub">Candle Making</span></h3></div>
-          <p class="short">Candle making game: steer wax, dip, light and sell candles with one thumb.</p>
+          <p class="short">Candle making game and factory simulator: steer wax, dip, light and sell.</p>
           <p class="body">Slide your thumb across a moving conveyor belt and steer a whole batch of candles through pools of molten wax. They come out the far end dipped, lit and ready to sell. The last pool you cross decides the color, and a clean, steady line pays more than zig-zagging. Sell each batch to climb from intern to tycoon through six factories.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.candlegift&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dcandlewright"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -381,10 +381,10 @@
       </article>
 
       <article class="game" id="fangwall" style="--g:#F28C28">
-        <div class="banner"><img src="games/fangwall/feature.webp" alt="Fangwall: a low-poly T-rex beside the game's title" width="1024" height="500" loading="lazy"></div>
+        <div class="banner"><img src="games/fangwall/feature.webp" alt="Fangwall: Tiderex, a water T-rex, beside an icy Water gate" width="1024" height="500" loading="lazy"></div>
         <div class="info">
           <div class="title"><img src="games/fangwall/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Fangwall<span class="sub">Dino Evolution Run</span></h3></div>
-          <p class="short">Dino evolution runner: shoot gates, evolve into a T-rex and smash the wall.</p>
+          <p class="short">Dino evolution run game: shoot gates, evolve into a T-rex and smash the wall.</p>
           <p class="body">Drag your thumb and your little raptor runs, and wherever you steer, you shoot. Gates stand across the road in four types, and the type you shoot most is what you evolve into at the next arch, out of sixteen forms. Every world ends at a wall of numbered stone blocks you have to smash your way through.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.wildform&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dfangwall"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -411,8 +411,8 @@
       <article class="game" id="nethermere" style="--g:#3E6A8A">
         <div class="banner"><img src="games/nethermere/feature.webp" alt="Nethermere: a fish on the line beside a lantern on a dark lake" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="games/nethermere/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Nethermere<span class="sub">Fishing Game</span></h3></div>
-          <p class="short">Relaxing lake fishing game: cast, catch 32 fish and go deeper into the dark.</p>
+          <div class="title"><img src="games/nethermere/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Nethermere<span class="sub">Quiet Fishing Game</span></h3></div>
+          <p class="short">Relaxing offline fishing game that turns creepy: cast, catch 32 fish, go deep.</p>
           <p class="body">You sit in a rowboat on a still lake at dawn, cast, watch the float and strike when it dips. Each fight is a reel you flick with your thumb while you keep a tension gauge out of the red. More line lets you fish deeper, and the lake grows quietly wrong the deeper you go. Nothing jumps at you, but a few moments are unsettling.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.stillwater&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dnethermere"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -439,8 +439,8 @@
       <article class="game" id="lawn-legend" style="--g:#4C9A3A">
         <div class="banner"><img src="games/lawn-legend/feature.webp" alt="Lawn Legend: a garden gnome in a yard of long grass" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="games/lawn-legend/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Lawn Legend<span class="sub">Lawn Mowing Game</span></h3></div>
-          <p class="short">Relaxing grass cutting game: mow the lawn, whack weeds, beat bosses, buy tools.</p>
+          <div class="title"><img src="games/lawn-legend/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Lawn Legend<span class="sub">Grass Cutting</span></h3></div>
+          <p class="short">Cozy grass cutting game: whack weeds, grow your yard, upgrade to a lawn mower</p>
           <p class="body">You step off the back porch with a stick and drag your thumb across an overgrown yard. Grass is cut in neat rows, weeds pop into coins, and there is no game over. Spend the coins on tools you can see in your hand, from a cricket bat to a string trimmer, then buy the gate and push the fence out into wilder ground, where a boss weed waits.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.yardling&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dlawn-legend"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -467,8 +467,8 @@
       <article class="game" id="load-bearing" style="--g:#F2B705">
         <div class="banner"><img src="games/load-bearing/feature.webp" alt="Load Bearing: a yellow crawler crane swinging a wrecking ball into a brick building" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="games/load-bearing/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Load Bearing<span class="sub">Wrecking Ball</span></h3></div>
-          <p class="short">Crane demolition game: swing the wrecking ball and drop buildings where you aim.</p>
+          <div class="title"><img src="games/load-bearing/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Load Bearing<span class="sub">Demolition Game</span></h3></div>
+          <p class="short">Wrecking ball game: swing the crane and bring buildings down where you aim</p>
           <p class="body">Slide your thumb to turn a crawler crane, let go, and the wrecking ball flies out and swings home by itself. Every building stands on a grid of columns, and what you leave standing decides how it falls. Take the middle and the floors drop straight down. Take the wrong ones and it leans onto the houses next door, or onto your crane.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.wreckingcrew&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dload-bearing"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -478,14 +478,14 @@
         </div>
         <div class="gallery">
           <div class="shots" tabindex="0" role="region" aria-label="Load Bearing screenshots">
-            <img src="games/load-bearing/shot-1.webp" alt="Swinging the wrecking ball into a brick house" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-2.webp" alt="Bringing the house down" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-3.webp" alt="Picking a target" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-4.webp" alt="Cutting the columns" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-5.webp" alt="Floors dropping straight down" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-6.webp" alt="A job done with three stars" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-7.webp" alt="Upgrading the crane in the yard" width="540" height="960" loading="lazy">
-            <img src="games/load-bearing/shot-8.webp" alt="Racing the rival crew" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-1.webp" alt="Chaining the whole block down in one cascade" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-2.webp" alt="Swinging the wrecking ball into a brick building" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-3.webp" alt="The floors dropping together" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-4.webp" alt="The heap settling where the building stood" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-5.webp" alt="Tipping a building over where you choose" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-6.webp" alt="Upgrading the crane in the yard" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-7.webp" alt="Finishing a challenge to earn a crane part" width="540" height="960" loading="lazy">
+            <img src="games/load-bearing/shot-8.webp" alt="Beating the rival crew to the plot" width="540" height="960" loading="lazy">
           </div>
           <button class="arrow prev" type="button" aria-label="Previous Load Bearing screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="arrow next" type="button" aria-label="Next Load Bearing screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -493,11 +493,11 @@
       </article>
 
       <article class="game" id="gelbound" style="--g:#3FBF9A">
-        <div class="banner"><img src="games/gelbound/feature.webp" alt="Gelbound: a glossy slime with a determined face on a jungle walkway" width="1024" height="500" loading="lazy"></div>
+        <div class="banner"><img src="games/gelbound/feature.webp" alt="Gelbound: a glossy green slime beside an exploding TNT crate" width="1024" height="500" loading="lazy"></div>
         <div class="info">
           <div class="title"><img src="games/gelbound/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Gelbound<span class="sub">3D Slime Platformer</span></h3></div>
           <p class="short">Run, jump and smash crates as a glossy slime in a one-thumb 3D platformer!</p>
-          <p class="body">The slime runs down a cobbled jungle path on its own. Tap to jump, land on a crate to burst it, swipe to spin, flick down to slam, and run before the TNT counts down to zero. Four worlds hide secret exits and mini games, and every level you clear carries water home to a withered tree that slowly comes back to life.</p>
+          <p class="body">The slime runs down a cobbled jungle path on its own. Tap to jump, land on a crate to burst it, swipe to spin, flick down to slam, and run before the TNT counts down to zero. Six worlds hide secret exits and mini games, and every level you clear carries water home to a withered tree that slowly comes back to life.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.jellyform&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dgelbound"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
             <a class="more" href="gelbound/">More about Gelbound</a>
@@ -522,8 +522,8 @@
       <article class="game" id="duskroll" style="--g:#E58C9A">
         <div class="banner"><img src="games/duskroll/feature.webp" alt="Duskroll: a giant snowball rolling through pines at dusk" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="games/duskroll/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Duskroll<span class="sub">Snowball Run</span></h3></div>
-          <p class="short">One-thumb snowball game: roll downhill, grow huge, build a cozy winter village.</p>
+          <div class="title"><img src="games/duskroll/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Duskroll<span class="sub">Snowball Roll &amp; Run</span></h3></div>
+          <p class="short">Snowball roll game: roll a snow ball downhill, grow huge, build a winter village</p>
           <p class="body">Push a snowball off the top of a mountain at dusk and lean it left or right with one thumb. Everything smaller than the ball sticks to it, anything a little bigger knocks snow off, and anything much bigger is a wall. Whatever reaches the village at the bottom becomes snow to build with. A run takes about a minute.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.snowball&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dduskroll"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -550,8 +550,8 @@
       <article class="game" id="mournwell" style="--g:#F0742C">
         <div class="banner"><img src="games/mournwell/feature.webp" alt="Mournwell: a drill ship's lamp in the dark above a glowing core" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="games/mournwell/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Mournwell<span class="sub">Drill to the Core</span></h3></div>
-          <p class="short">Drill and mine a dead world to its core, then climb out before it falls apart.</p>
+          <div class="title"><img src="games/mournwell/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>Mournwell<span class="sub">Mining Drill Game</span></h3></div>
+          <p class="short">A mining game: drill down a dead world to its core, then escape before it falls.</p>
           <p class="body">You set your ship down on a dead planet, point the drill at the ground and hold. Your lamp lights only the shaft you cut. Everything you carry makes the climb heavier, so you choose when to send the haul home. Cut out the core and the planet starts to come apart, and the only way out is back up your own tunnel.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.gravewell&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dmournwell"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -578,11 +578,12 @@
       <article class="game" id="lattice" style="--g:#E08A3C">
         <div class="banner"><img src="games/lattice/feature.webp" alt="The Lattice: a drill ship in a lit shaft between walls of glowing ore" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="games/lattice/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>The Lattice<span class="sub">Mining Adventure</span></h3></div>
-          <p class="short">Drill through a whole planet, break the Anchors and open the Vault at the center.</p>
+          <div class="title"><img src="games/lattice/icon.webp" alt="" width="64" height="64" loading="lazy"><h3>The Lattice<span class="sub">Drill Mining Game</span></h3></div>
+          <p class="short">A dig down mining game: drill for ore, upgrade your ship, open the Vault.</p>
           <p class="body">Hold down and your ship digs. Sell ore at the surface pad, find the keys you never sell, and break the Anchors that hold three barriers shut. The planet starts to come apart once the first core goes.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.lattice&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite%26utm_campaign%3Dlattice"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
+            <a class="btn btn-quiet" href="https://gideon6222.github.io/lattice/">Play in your browser</a>
             <a class="more" href="lattice/">More about The Lattice</a>
             <a class="privacy" href="https://gideon6222.github.io/privacy/lattice.html">Privacy</a>
           </div>
@@ -591,8 +592,10 @@
           <div class="shots" tabindex="0" role="region" aria-label="The Lattice screenshots">
             <img src="games/lattice/shot-1.webp" alt="The drill ship cutting down a lit shaft" width="540" height="960" loading="lazy">
             <img src="games/lattice/shot-2.webp" alt="An emerald key crystal in the rock below the ship" width="540" height="960" loading="lazy">
-            <img src="games/lattice/shot-3.webp" alt="A barrier core glowing once its three Anchors are broken" width="540" height="960" loading="lazy">
-            <img src="games/lattice/shot-4.webp" alt="The fitting bay, with the ship on its lift and upgrade cards" width="540" height="960" loading="lazy">
+            <img src="games/lattice/shot-3.webp" alt="The drill ship dropping from the surface pad into its first shaft" width="540" height="960" loading="lazy">
+            <img src="games/lattice/shot-4.webp" alt="A barrier core glowing once its three Anchors are broken" width="540" height="960" loading="lazy">
+            <img src="games/lattice/shot-5.webp" alt="The fitting bay, with the ship on its lift and upgrade cards" width="540" height="960" loading="lazy">
+            <img src="games/lattice/shot-6.webp" alt="A glowing Anchor in the rock below the drill ship" width="540" height="960" loading="lazy">
           </div>
           <button class="arrow prev" type="button" aria-label="Previous The Lattice screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="arrow next" type="button" aria-label="Next The Lattice screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -601,7 +604,7 @@
 
     </div>
 
-    <p class="soon"><strong>Coming soon:</strong> Beacon Hill, a tower defense game. Build walls and lamps by day, then hold back the dark with your tower's beam by night. And Capy Knight.</p>
+    <p class="soon"><strong>Coming soon:</strong> Beacon Hill, a tower defense game: build by day, then beam and pulse the dark by night. Ebblight, a lighthouse horror game: keep the lamp lit, comb the beach at low tide and carry oil home before dark. And Capy Knight, where a timid capybara grows into a knight beside Princess Ginger Cat.</p>
   </section>
 
   <div class="wrap duo">
@@ -610,7 +613,7 @@
       <p>Calsynergy Games is one person making small games for phones. Each game starts with one idea you can play with one thumb, then gets tuned until it is worth coming back to.</p>
       <ul class="facts">
         <li>Every game is built and tested on a real phone before it ships.</li>
-        <li>Every game is free to play. There are limited ads, which show occasionally between levels. If you would like to show your support, you can remove them permanently with one purchase.</li>
+        <li>Every game is free to play. Most have limited ads, which show occasionally between levels. If you would like to show your support, you can remove them permanently with one purchase. The Lattice has no ads at all.</li>
         <li>No accounts, no energy timers, and your progress stays on your phone.</li>
       </ul>
     </section>

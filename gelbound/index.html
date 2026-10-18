@@ -312,8 +312,6 @@
   .facts li { display: flex; gap: 12px; align-items: baseline; }
   .facts li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--cta); transform: translateY(-1px); }
   .email { display: inline-block; margin-top: 18px; font-weight: 700; font-size: clamp(1.15rem, 5vw, 1.45rem); overflow-wrap: anywhere; text-decoration-color: var(--cta); text-decoration-thickness: 3px; text-underline-offset: 6px; }
-  .social { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .social svg { width: 18px; height: 18px; flex: none; }
 
   footer { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 0.92rem; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
@@ -330,9 +328,10 @@
   .about-game li { margin: 4px 0; }
   .others { padding-bottom: 64px; }
   .others h2 { font-family: Unbounded, sans-serif; font-size: 1.2rem; margin-bottom: 14px; }
-  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
   .others a { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; }
   .others img { width: 40px; height: 40px; border-radius: 30%; flex: none; }
+  @media (max-width: 420px) { .others a { padding: 8px; gap: 8px; font-size: 0.9rem; line-height: 1.25; } .others img { width: 34px; height: 34px; } }
 </style>
 </head>
 <body>
@@ -350,11 +349,11 @@
   <section class="wrap games" aria-label="Gelbound">
     <div class="game-list">
       <article class="game solo-game" id="gelbound" style="--g:#3FBF9A">
-        <div class="banner"><img src="../games/gelbound/feature.webp" alt="Gelbound: a glossy slime with a determined face on a jungle walkway" width="1024" height="500" loading="lazy"></div>
+        <div class="banner"><img src="../games/gelbound/feature.webp" alt="Gelbound: a glossy green slime beside an exploding TNT crate" width="1024" height="500" loading="lazy"></div>
         <div class="info">
           <div class="title"><img src="../games/gelbound/icon.webp" alt="" width="64" height="64" loading="lazy"><h1 class="gname">Gelbound<span class="sub">3D Slime Platformer</span></h1></div>
           <p class="short">Run, jump and smash crates as a glossy slime in a one-thumb 3D platformer!</p>
-          <p class="body">The slime runs down a cobbled jungle path on its own. Tap to jump, land on a crate to burst it, swipe to spin, flick down to slam, and run before the TNT counts down to zero. Four worlds hide secret exits and mini games, and every level you clear carries water home to a withered tree that slowly comes back to life.</p>
+          <p class="body">The slime runs down a cobbled jungle path on its own. Tap to jump, land on a crate to burst it, swipe to spin, flick down to slam, and run before the TNT counts down to zero. Six worlds hide secret exits and mini games, and every level you clear carries water home to a withered tree that slowly comes back to life.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.jellyform&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dgamepage%26utm_campaign%3Dgelbound"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
             <a class="privacy" href="https://gideon6222.github.io/privacy/jelly-form.html">Privacy</a>
@@ -381,12 +380,14 @@
       <h2 id="about-game-title">About Gelbound</h2>
       <p>Run, jump and smash crates as a glossy slime in Gelbound, a fast one-thumb 3D platformer. In your first minute the slime is already running down a cobbled jungle path on its own: tap to jump, land on a crate and it bursts under you, tap again just before you land to bounce high across a whole row, and run before the TNT counts down to zero. You are a drop of living gel, drawn as real, wet, glossy slime that wobbles, squashes and stretches with every hop.</p>
       <p>Every level you clear carries water home to the Wellspring, a pool under a withered tree, and the tree comes back to life a little more each time. Around the pool stand the world drops: giant drops of gel with a whole world alive inside each one in miniature. Tap a drop and your slime hops in and is swallowed through to that world.</p>
-      <h3>Four worlds to run through</h3>
+      <h3>Six worlds to run through</h3>
       <ul>
         <li>The Canopy: walkways high in the jungle treetops, beetles, fireflies and brambles to burrow through</li>
-        <li>The Factory: a factory hall with hazard-striped pits and iron crates</li>
+        <li>Candy Lanes: a cake plaza, candy-cane arches and gumdrop springs that bounce you high</li>
         <li>Autumn Hollow: falling leaves and gusts of wind that carry you over the gaps</li>
         <li>Frost Falls: slick ice to slide across and snowmen along the way</li>
+        <li>The Foundry: a foundry at night with molten gutters, glowing pits and iron crates</li>
+        <li>Brick Town: toy-brick streets, snap bridges that part on the beat and brick dinos that stomp</li>
         <li>Each world opens with a ride of its own, down the falls, by freight line and along the wind</li>
       </ul>
       <h3>One thumb, many moves</h3>
@@ -431,6 +432,7 @@
         <li><a href="../load-bearing/"><img src="../games/load-bearing/icon.webp" alt="" width="40" height="40" loading="lazy">Load Bearing</a></li>
         <li><a href="../duskroll/"><img src="../games/duskroll/icon.webp" alt="" width="40" height="40" loading="lazy">Duskroll</a></li>
         <li><a href="../mournwell/"><img src="../games/mournwell/icon.webp" alt="" width="40" height="40" loading="lazy">Mournwell</a></li>
+        <li><a href="../lattice/"><img src="../games/lattice/icon.webp" alt="" width="40" height="40" loading="lazy">The Lattice</a></li>
       </ul>
   </section>
 </main>

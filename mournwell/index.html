@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mournwell: Drill to the Core for Android | Calsynergy Games</title>
-<meta name="description" content="Drill and mine a dead world to its core, then climb out before it falls apart. Free on Google Play, from Calsynergy Games.">
+<title>Mournwell: Mining Drill Game for Android | Calsynergy Games</title>
+<meta name="description" content="A mining game: drill down a dead world to its core, then escape before it falls. Free on Google Play, from Calsynergy Games.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F2F0FA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#15132A" media="(prefers-color-scheme: dark)">
@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Calsynergy Games">
-<meta property="og:title" content="Mournwell: Drill to the Core">
-<meta property="og:description" content="Drill and mine a dead world to its core, then climb out before it falls apart.">
+<meta property="og:title" content="Mournwell: Mining Drill Game">
+<meta property="og:description" content="A mining game: drill down a dead world to its core, then escape before it falls.">
 <meta property="og:url" content="https://calsynergygames.com/mournwell/">
 <meta property="og:image" content="https://calsynergygames.com/games/mournwell/feature.webp">
 <meta property="og:image:width" content="1024">
@@ -30,7 +30,7 @@
   "name": "Mournwell",
   "operatingSystem": "Android",
   "applicationCategory": "GameApplication",
-  "description": "Drill and mine a dead world to its core, then climb out before it falls apart.",
+  "description": "A mining game: drill down a dead world to its core, then escape before it falls.",
   "url": "https://calsynergygames.com/mournwell/",
   "image": "https://calsynergygames.com/games/mournwell/feature.webp",
   "screenshot": [
@@ -312,8 +312,6 @@
   .facts li { display: flex; gap: 12px; align-items: baseline; }
   .facts li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--cta); transform: translateY(-1px); }
   .email { display: inline-block; margin-top: 18px; font-weight: 700; font-size: clamp(1.15rem, 5vw, 1.45rem); overflow-wrap: anywhere; text-decoration-color: var(--cta); text-decoration-thickness: 3px; text-underline-offset: 6px; }
-  .social { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .social svg { width: 18px; height: 18px; flex: none; }
 
   footer { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 0.92rem; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
@@ -330,9 +328,10 @@
   .about-game li { margin: 4px 0; }
   .others { padding-bottom: 64px; }
   .others h2 { font-family: Unbounded, sans-serif; font-size: 1.2rem; margin-bottom: 14px; }
-  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
   .others a { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; }
   .others img { width: 40px; height: 40px; border-radius: 30%; flex: none; }
+  @media (max-width: 420px) { .others a { padding: 8px; gap: 8px; font-size: 0.9rem; line-height: 1.25; } .others img { width: 34px; height: 34px; } }
 </style>
 </head>
 <body>
@@ -352,8 +351,8 @@
       <article class="game solo-game" id="mournwell" style="--g:#F0742C">
         <div class="banner"><img src="../games/mournwell/feature.webp" alt="Mournwell: a drill ship's lamp in the dark above a glowing core" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="../games/mournwell/icon.webp" alt="" width="64" height="64" loading="lazy"><h1 class="gname">Mournwell<span class="sub">Drill to the Core</span></h1></div>
-          <p class="short">Drill and mine a dead world to its core, then climb out before it falls apart.</p>
+          <div class="title"><img src="../games/mournwell/icon.webp" alt="" width="64" height="64" loading="lazy"><h1 class="gname">Mournwell<span class="sub">Mining Drill Game</span></h1></div>
+          <p class="short">A mining game: drill down a dead world to its core, then escape before it falls.</p>
           <p class="body">You set your ship down on a dead planet, point the drill at the ground and hold. Your lamp lights only the shaft you cut. Everything you carry makes the climb heavier, so you choose when to send the haul home. Cut out the core and the planet starts to come apart, and the only way out is back up your own tunnel.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.gravewell&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dgamepage%26utm_campaign%3Dmournwell"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -380,8 +379,8 @@
 
   <section class="wrap about-game" aria-labelledby="about-game-title">
       <h2 id="about-game-title">About Mournwell</h2>
-      <p>In your first minute of Mournwell you set your ship down on a dead planet, point the drill at the ground and hold. Rock cracks, chips fly, and your lamp lights the shaft you just cut and nothing else. Ore glints in the wall. You dig toward it, fill the hold, and feel the ship grow heavy. Then you decide: send the haul home now, or dig deeper for the better seams.</p>
-      <p>Mournwell is a mining game about going down into the dark and the climb back out. You are a salvager working a graveyard of dead worlds. Each one has a core, the last thing still burning inside it. Drill to the bottom, cut the core free, and the planet starts to come apart. Now the only way out is up the tunnel you dug, with the core aboard and the clock running.</p>
+      <p>Mournwell is a mining game where you drill down through a dead planet to its core, then climb out before it comes apart. In your first minute you set your ship down, point the drill at the ground and hold. Rock cracks, chips fly, and your lamp lights the shaft you just cut and nothing else. Ore glints in the wall. You dig toward it, fill the hold, and feel the ship grow heavy. Then you decide: send the haul home now, or dig deeper for the better seams.</p>
+      <p>This mining adventure is about going down into the dark and the climb back out. You are a salvager working a graveyard of dead worlds. Each one has a core, the last thing still burning inside it. Drill to the bottom, cut the core free, and the planet starts to come apart. Now the only way out is up the tunnel you dug, with the core aboard and the clock running.</p>
       <h3>What you do</h3>
       <ul>
         <li>Dig with one thumb: steer, hold, and the drill bites into the rock.</li>
@@ -409,7 +408,7 @@
         <li>An atmospheric sci-fi look built on light and dark, with sound that changes as the air thickens.</li>
         <li>Touch controls made for a phone held in one hand.</li>
       </ul>
-      <p>If you like digging games, underground exploration, mining upgrades and a tense escape at the end of every run, this is a dig down, get rich, get out game with a real ending.</p>
+      <p>If you like a drill game with real weight to it, underground exploration, mining upgrades and a tense escape at the end of every run, this mining game is dig down, get rich, get out, with a real ending. Pick it up for a quick drill game session or a long mining adventure across seven worlds.</p>
       <p>An ad can show between descents, when you launch from the Hold, and never while you are digging. One purchase, Remove ads, takes those away for good.</p>
   </section>
 
@@ -423,6 +422,7 @@
         <li><a href="../load-bearing/"><img src="../games/load-bearing/icon.webp" alt="" width="40" height="40" loading="lazy">Load Bearing</a></li>
         <li><a href="../gelbound/"><img src="../games/gelbound/icon.webp" alt="" width="40" height="40" loading="lazy">Gelbound</a></li>
         <li><a href="../duskroll/"><img src="../games/duskroll/icon.webp" alt="" width="40" height="40" loading="lazy">Duskroll</a></li>
+        <li><a href="../lattice/"><img src="../games/lattice/icon.webp" alt="" width="40" height="40" loading="lazy">The Lattice</a></li>
       </ul>
   </section>
 </main>

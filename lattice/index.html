@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Lattice: Mining Adventure for Android | Calsynergy Games</title>
-<meta name="description" content="A dig-down mining game: drill through a whole planet, break the Anchors and open the Vault at the center. Free on Google Play, from Calsynergy Games.">
+<title>The Lattice: Drill Mining Game for Android | Calsynergy Games</title>
+<meta name="description" content="A dig down mining game: drill for ore, upgrade your ship, open the Vault. Free on Google Play, from Calsynergy Games.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F2F0FA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#15132A" media="(prefers-color-scheme: dark)">
@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Calsynergy Games">
-<meta property="og:title" content="The Lattice: Mining Adventure">
-<meta property="og:description" content="Drill through a whole planet, break the Anchors and open the Vault at the center.">
+<meta property="og:title" content="The Lattice: Drill Mining Game">
+<meta property="og:description" content="A dig down mining game: drill for ore, upgrade your ship, open the Vault.">
 <meta property="og:url" content="https://calsynergygames.com/lattice/">
 <meta property="og:image" content="https://calsynergygames.com/games/lattice/feature.webp">
 <meta property="og:image:width" content="1024">
@@ -27,17 +27,19 @@
 {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  "name": "The Lattice: Mining Adventure",
+  "name": "The Lattice",
   "operatingSystem": "Android",
   "applicationCategory": "GameApplication",
-  "description": "Drill through a whole planet, break the Anchors and open the Vault at the center.",
+  "description": "A dig down mining game: drill for ore, upgrade your ship, open the Vault.",
   "url": "https://calsynergygames.com/lattice/",
   "image": "https://calsynergygames.com/games/lattice/feature.webp",
   "screenshot": [
     "https://calsynergygames.com/games/lattice/shot-1.webp",
     "https://calsynergygames.com/games/lattice/shot-2.webp",
     "https://calsynergygames.com/games/lattice/shot-3.webp",
-    "https://calsynergygames.com/games/lattice/shot-4.webp"
+    "https://calsynergygames.com/games/lattice/shot-4.webp",
+    "https://calsynergygames.com/games/lattice/shot-5.webp",
+    "https://calsynergygames.com/games/lattice/shot-6.webp"
   ],
   "installUrl": "https://play.google.com/store/apps/details?id=com.gideon.lattice",
   "offers": {
@@ -249,9 +251,10 @@
   .about-game li { margin: 4px 0; }
   .others { padding-bottom: 64px; }
   .others h2 { font-family: Unbounded, sans-serif; font-size: 1.2rem; margin-bottom: 14px; }
-  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .others ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
   .others a { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; }
   .others img { width: 40px; height: 40px; border-radius: 30%; flex: none; }
+  @media (max-width: 420px) { .others a { padding: 8px; gap: 8px; font-size: 0.9rem; line-height: 1.25; } .others img { width: 34px; height: 34px; } }
 </style>
 </head>
 <body>
@@ -271,8 +274,8 @@
       <article class="game solo-game" id="lattice" style="--g:#E08A3C">
         <div class="banner"><img src="../games/lattice/feature.webp" alt="The Lattice: a drill ship in a lit shaft between walls of glowing ore" width="1024" height="500" loading="lazy"></div>
         <div class="info">
-          <div class="title"><img src="../games/lattice/icon.webp" alt="" width="64" height="64" loading="lazy"><h1 class="gname">The Lattice<span class="sub">Mining Adventure</span></h1></div>
-          <p class="short">Drill through a whole planet, break the Anchors and open the Vault at the center.</p>
+          <div class="title"><img src="../games/lattice/icon.webp" alt="" width="64" height="64" loading="lazy"><h1 class="gname">The Lattice<span class="sub">Drill Mining Game</span></h1></div>
+          <p class="short">A dig down mining game: drill for ore, upgrade your ship, open the Vault.</p>
           <p class="body">Hold down and your ship digs. Sell ore at the surface pad, find the keys you never sell, and break the Anchors that hold three barriers shut. The planet starts to come apart once the first core goes.</p>
           <div class="links">
             <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.gideon.lattice&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dgamepage%26utm_campaign%3Dlattice"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Get it on Google Play</a>
@@ -284,8 +287,10 @@
           <div class="shots" tabindex="0" role="region" aria-label="The Lattice screenshots">
             <img src="../games/lattice/shot-1.webp" alt="The drill ship cutting down a lit shaft" width="540" height="960" loading="lazy">
             <img src="../games/lattice/shot-2.webp" alt="An emerald key crystal in the rock below the ship" width="540" height="960" loading="lazy">
-            <img src="../games/lattice/shot-3.webp" alt="A barrier core glowing once its three Anchors are broken" width="540" height="960" loading="lazy">
-            <img src="../games/lattice/shot-4.webp" alt="The fitting bay, with the ship on its lift and upgrade cards" width="540" height="960" loading="lazy">
+            <img src="../games/lattice/shot-3.webp" alt="The drill ship dropping from the surface pad into its first shaft" width="540" height="960" loading="lazy">
+            <img src="../games/lattice/shot-4.webp" alt="A barrier core glowing once its three Anchors are broken" width="540" height="960" loading="lazy">
+            <img src="../games/lattice/shot-5.webp" alt="The fitting bay, with the ship on its lift and upgrade cards" width="540" height="960" loading="lazy">
+            <img src="../games/lattice/shot-6.webp" alt="A glowing Anchor in the rock below the drill ship" width="540" height="960" loading="lazy">
           </div>
           <button class="arrow prev" type="button" aria-label="Previous The Lattice screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="arrow next" type="button" aria-label="Next The Lattice screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -296,23 +301,25 @@
 
   <section class="wrap about-game" aria-labelledby="about-game-title">
       <h2 id="about-game-title">About The Lattice</h2>
-      <p>The Lattice is a mining game with a lock on it. Anchors are buried across a planet, three under each of three barriers that nothing in your drill ship can touch. Break a barrier&#x27;s three Anchors and its core lights up. Break the core and the way down opens. The last core is the door of the Vault at the center, and that is the end.</p>
-      <p>Hold down and the ship digs. Everything below you is rock until you cut it, and everything you cut is a shaft you have to climb back up. The planet is 61 columns wide and 452 metres deep, in twelve regions that each have their own rock and their own rules.</p>
+      <p>The Lattice is a dig down mining game with a lock on it. Drill for ore, sell it, upgrade your ship and go deeper. Anchors are buried across a planet, three under each of three barriers that nothing in your drill ship can touch. Break a barrier&#x27;s three Anchors and its core lights up. Break the core and the way down opens. The last core is the door of the Vault at the center, and that is the end.</p>
+      <p>Hold down and the drill ship digs. Everything below you is rock until you cut it, and everything you cut is a shaft you have to climb back up. The whole planet is one world, 61 columns wide and 452 meters deep, in twelve regions that each have their own rock and their own rules.</p>
       <h3>Dig where you like</h3>
-      <ul>
-        <li>There is no route: the whole face is diggable, and the shaft is whatever shape you make it</li>
-        <li>Cutting straight is fast and cutting wide finds more</li>
-        <li>Marks at the top of the screen fill as you break a depth&#x27;s Anchors</li>
-      </ul>
+      <p>There is no route. The whole face is diggable, so the shaft is whatever shape you make it, and the one you cut on the way down is the one you climb on the way back. Cutting straight is fast and cutting wide finds more. Marks at the top of the screen fill as you break a depth&#x27;s Anchors, so the game never stops telling you what it wants.</p>
       <h3>Keys you never sell</h3>
-      <p>Copper, iron, silver and gold are money, sold at the pad. Deeper down are the keys: amethyst, emerald, ruby and rarer things, one crystal at a time in small pockets. Keys are never sold. They are what the better parts of the ship are made from, so every find is a moment and every upgrade is a hunt.</p>
+      <p>Copper near the surface, then iron, silver and gold: that is money, sold at the pad. Deeper down are the keys: amethyst, emerald, ruby and rarer things, one crystal at a time in small pockets, each with a home region the map will name. Keys are never sold. They are what the better parts of the ship are made from, so every find is a moment and every rung of an upgrade is a hunt. Your sensors can tell you a key is near, never where.</p>
       <h3>The planet comes apart</h3>
-      <p>Break the first core and the ground stops staying where you left it. Every Anchor you break after that shows in the rock, then in the air, and you can patch the scars they leave by packing ore into them.</p>
+      <p>Break the first core and the ground stops staying where you left it. Every Anchor you break after that shows in the rock, then in the air. You can patch the scars the Anchors leave by packing ore into them, and you watch them close. The back half of the game is dug through a world that is moving.</p>
       <h3>Twelve wrecks</h3>
-      <p>Twelve wrecked drill ships are buried across the planet, one in every region. You see the shape of one in the dark before you know what it is, its own lamp still faintly lit. Cut through and the hold still holds what the crew had dug.</p>
+      <p>Twelve wrecked drill ships are buried across the planet, one in every region, always in the same places. You will see the shape of one in the dark before you know what it is, its own lamp still faintly lit. Cut through and the hold still holds whatever that crew had dug before they stopped.</p>
       <h3>Fuel is the clock</h3>
-      <p>Nothing hunts you, but the ground is not safe. Gas pockets open the hull, deep rock cooks it, and tremors close tunnels behind you. Every metre costs the same going down as coming up, so turning around with half a tank left is the correct play.</p>
-      <p>Free, with no ads, no in-app purchases, no accounts and no analytics. Your progress is saved on your device.</p>
+      <p>Nothing hunts you, but the ground is not safe. Gas pockets open the hull, deep rock cooks it, and tremors close tunnels behind you. What actually limits a run is the tank, and every meter costs the same going down as coming up. Turning around with half a tank left is the correct play and it never feels like one.</p>
+      <h3>Rock that is holding something up</h3>
+      <p>Deeper down you will see a warm glow in the stone that is worth more than anything else at that depth. Cutting it brings the tunnel you came down in partly down behind you, so the way home is one you have to find again. Cut it or leave it, and either way it costs you.</p>
+      <h3>Sealed in the rock</h3>
+      <p>Seven devices are buried out there and none of them is for sale, among them a cutting laser, a salvage magnet, a repair drone, and a receiver that hears an unbroken Anchor through solid rock and tells you how near it is, never which way.</p>
+      <h3>The fitting bay</h3>
+      <p>Sell the haul at the pad and fit it to the ship. Every upgrade is a card that says what it does and what it will cost you, in credits and in keys. Every barrier you open has a bay of its own, a save point, and something the pad will never sell.</p>
+      <p>If you like a mining game where you dig down at your own pace, drill your own shaft and decide when to turn back, this one is built for it. Plays in the browser or installed from the store. Free, with no wait timers, no ads, no in-app purchases, no accounts and no analytics. Your progress is saved on your device and nothing you do is sent anywhere.</p>
   </section>
 
   <section class="wrap others" aria-labelledby="others-title">
